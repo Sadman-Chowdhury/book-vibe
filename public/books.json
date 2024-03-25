@@ -1,0 +1,80 @@
+[
+    {
+        "bookId": 1,
+        "bookName": "The Silent Patient",
+        "author": "Alex Michaelides",
+        "image": "https://i.ibb.co/6ZfdjyT/fdd0e218554fda4443af36899ee3aa12.png",
+        "review": "A gripping psychological thriller that keeps you hooked from start to finish. The author masterfully weaves together a complex narrative with unexpected twists and turns, leaving readers on the edge of their seats until the very last page.",
+        "totalPages": 336,
+        "rating": 4.5,
+        "category": "Mystery",
+        "tags": ["Suspense", "Psychological"],
+        "publisher": "Celadon Books",
+        "yearOfPublishing": 2019
+    },
+    {
+        "bookId": 2,
+        "bookName": "Educated",
+        "author": "Tara Westover",
+        "image": "https://i.ibb.co/dg7D2Jr/ce3004447af28acdb8c6fce01bf120bd.png",
+        "review": "A powerful memoir about resilience, determination, and the pursuit of knowledge. Tara Westover's story is both inspiring and heartbreaking, as she recounts her journey from growing up in a strict survivalist family to eventually pursuing higher education against all odds.",
+        "totalPages": 352,
+        "rating": 4.7,
+        "category": "Biography",
+        "tags": ["Inspiring", "Memoir"],
+        "publisher": "Random House",
+        "yearOfPublishing": 2018
+    },
+    {
+        "bookId": 3,
+        "bookName": "The Great Gatsby",
+        "author": "F. Scott Fitzgerald",
+        "image": "https://i.ibb.co/5KbCJW4/9d64556d757ca419326dbb22159ff2ae.png",
+        "review": "A classic tale of love, ambition, and the American Dream. F. Scott Fitzgerald's masterpiece transports readers to the roaring twenties, where they encounter a cast of unforgettable characters and explore themes of wealth, social class, and disillusionment.",
+        "totalPages": 180,
+        "rating": 4.2,
+        "category": "Fiction",
+        "tags": ["Classic", "Romance"],
+        "publisher": "Scribner",
+        "yearOfPublishing": 1925
+    },
+    {
+        "bookId": 4,
+        "bookName": "To Kill a Mockingbird",
+        "author": "Harper Lee",
+        "image": "https://i.ibb.co/vY6PWQ7/4f3957e8f023d8d60bae77fda6c15279.png",
+        "review": "A profound and moving story that addresses themes of racism, injustice, and morality. Harper Lee's timeless novel offers readers a poignant exploration of compassion and integrity through the eyes of young Scout Finch, as she navigates the complexities of her small southern town.",
+        "totalPages": 281,
+        "rating": 4.6,
+        "category": "Classic",
+        "tags": ["Social Justice", "Coming of Age"],
+        "publisher": "J.B. Lippincott & Co.",
+        "yearOfPublishing": 1960
+    },
+    {
+        "bookId": 5,
+        "bookName": "The Hunger Games",
+        "author": "Suzanne Collins",
+        "image": "https://i.ibb.co/5ch6kpq/d3c7344e22a9684793d7a7fb662caac7.png",
+        "review": "An exhilarating dystopian adventure that explores themes of survival and rebellion. Suzanne Collins captivates readers with her fast-paced storytelling and vivid world-building, creating a gripping narrative that keeps you on the edge of your seat until the very end.",
+        "totalPages": 374,
+        "rating": 4.4,
+        "category": "Science Fiction",
+        "tags": ["Dystopian", "Action"],
+        "publisher": "Scholastic Corporation",
+        "yearOfPublishing": 2008
+    },
+    {
+        "bookId": 6,
+        "bookName": "Harry Potter and the Philosopher's Stone",
+        "author": "J.K. Rowling",
+        "image": "https://i.ibb.co/vJrQCrb/642f797cd362e163b10280a18e873752.png",
+        "review": "An enchanting fantasy tale that introduces readers to the magical world of Hogwarts. J.K. Rowling's debut novel is a delightful blend of adventure, friendship, and the power of imagination, making it a timeless classic beloved by readers of all ages.",
+        "totalPages": 309,
+        "rating": 4.8,
+        "category": "Fantasy",
+        "tags": ["Magic", "Adventure"],
+        "publisher": "Bloomsbury Publishing",
+        "yearOfPublishing": 1997
+    }
+]
