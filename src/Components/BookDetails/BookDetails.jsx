@@ -1,5 +1,8 @@
 import { useLoaderData, useParams } from "react-router-dom";
 import '../Font/font.css'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { useState } from "react";
 
 const BookDetails = () => {
     const books = useLoaderData()
@@ -7,10 +10,28 @@ const BookDetails = () => {
     const idInt = parseInt(bookId)
     const book = books.find(book => book.bookId === idInt)
 
-    // const handleApplyJob = () => {
-    //     saveJobApplication(idInt)
-    //     toast('You have applied sucessfully')
-    // }
+    const [isRead, setIsRead] = useState(false)
+    const [isWishlist, setIsWishlist] = useState(false)
+
+    const handleRead = () => {
+        if(!isRead){
+            setIsRead(true)
+            toast.success('Successfully added to Read!');
+        }else{
+            toast.error('Already added to Read!');
+        }
+    }
+
+    const handleWishlist = () => {
+        if(!isWishlist && !isRead){
+            setIsWishlist(true)
+            toast.success('Successfully added to Wishlist!');
+        }else if(isRead){
+            toast.error('Already added to Read!');
+        }else{
+            toast.error('Already added to Wishlist!');
+        }
+    }
 
     return (
         <div className="flex flex-col lg:flex-row work-sans gap-10 mt-6">
@@ -46,8 +67,9 @@ const BookDetails = () => {
                             <p>{book.rating}</p>
                         </div>
                     </div>
-                    <button className="border px-7 py-4 rounded-lg font-semibold mr-7">Read</button>
-                    <button className="border px-7 py-4 rounded-lg font-semibold bg-[#50B1C9] text-white">Wishlist</button>
+                    <button onClick={handleRead} className="border px-7 py-4 rounded-lg font-semibold mr-7">Read</button>
+                    <button onClick={handleWishlist} className="border px-7 py-4 rounded-lg font-semibold bg-[#50B1C9] text-white">Wishlist</button>
+                    <ToastContainer />
                 </div>
             </div>
     );
