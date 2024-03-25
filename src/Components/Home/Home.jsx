@@ -1,3 +1,4 @@
+import Books from '../Books/Books';
 import '../Font/font.css'
 
 const Home = () => {
@@ -14,6 +15,7 @@ const Home = () => {
                     <img src="https://i.ibb.co/jk8Bvvd/713be2009ed5e0a38a726ba628d93944.png" className='h-[300px] lg:h-[400px]' alt="" />
                 </div>
             </div>
+            <Books></Books>
         </div>
     );
 };
