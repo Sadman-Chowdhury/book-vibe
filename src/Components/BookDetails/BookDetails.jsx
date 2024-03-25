@@ -3,6 +3,7 @@ import '../Font/font.css'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useState } from "react";
+import { saveReadBooks } from "../../Utilities/localStorage";
 
 const BookDetails = () => {
     const books = useLoaderData()
@@ -16,6 +17,7 @@ const BookDetails = () => {
     const handleRead = () => {
         if(!isRead){
             setIsRead(true)
+            saveReadBooks(idInt)
             toast.success('Successfully added to Read!');
         }else{
             toast.error('Already added to Read!');
