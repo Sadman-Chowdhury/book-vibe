@@ -3,7 +3,7 @@ import '../Font/font.css'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useState } from "react";
-import { saveReadBooks } from "../../Utilities/localStorage";
+import { saveReadBooks, saveWishlistBooks } from "../../Utilities/localStorage";
 
 const BookDetails = () => {
     const books = useLoaderData()
@@ -27,6 +27,7 @@ const BookDetails = () => {
     const handleWishlist = () => {
         if(!isWishlist && !isRead){
             setIsWishlist(true)
+            saveWishlistBooks(idInt)
             toast.success('Successfully added to Wishlist!');
         }else if(isRead){
             toast.error('Already added to Read!');
