@@ -63,14 +63,14 @@ const ListedBooks = () => {
                 <input type="radio" name="my_tabs_2" role="tab" className="tab text-xl work-sans" aria-label="Read Books" checked/>
                 <div role="tabpanel" className="tab-content bg-base-100 border-base-300 rounded-box p-6">
                     {
-                        readBookDisplay.map(readBook=><div key={readBook.bookId} className="flex flex-row work-sans gap-10 mt-10">
-                        <div className="bg-gray-100 rounded-2xl flex justify-center p-8 w-3/12">
+                        readBookDisplay.map(readBook=><div key={readBook.bookId} className="flex flex-col lg:flex-row work-sans gap-5 lg:gap-10 mt-10">
+                        <div className="bg-gray-100 rounded-2xl flex justify-center p-8 w-full lg:w-3/12">
                             <img className="h-[170px]" src={readBook.image} alt="" />
                         </div>
-                        <div className="w-3/4 space-y-3">
+                        <div className="w-full lg:w-3/4 space-y-3">
                             <h1 className="text-[24px] font-bold playfair">{readBook.bookName}</h1>
                             <p className="text-[16px] font-medium">By: {readBook.author}</p>
-                            <div className="flex gap-5">
+                            <div className="flex flex-col lg:flex-row gap-5">
                                 <div className="space-x-5">
                                     <span className="font-bold text-black">Tag</span>
                                     <span className="text-[#23BE0A] bg-gray-100 px-4 py-1 rounded-[30px]">#{readBook.tags[0]}</span>
@@ -108,14 +108,14 @@ const ListedBooks = () => {
                 <input type="radio" name="my_tabs_2" role="tab" className="tab text-xl work-sans" aria-label="Wishlist Books" />
                 <div role="tabpanel" className="tab-content bg-base-100 border-base-300 rounded-box p-6">
                 {
-                        wishlistBookDisplay.map(wishlistBook=><div key={wishlistBook.bookId} className="flex flex-row work-sans gap-10 mt-10">
-                        <div className="bg-gray-100 rounded-2xl flex justify-center p-8 w-3/12">
+                        wishlistBookDisplay.map(wishlistBook=><div key={wishlistBook.bookId} className="flex flex-col lg:flex-row work-sans gap-10 mt-10">
+                        <div className="bg-gray-100 rounded-2xl flex justify-center p-8 w-full lg:w-3/12">
                             <img className="h-[170px]" src={wishlistBook.image} alt="" />
                         </div>
-                        <div className="w-3/4 space-y-3">
+                        <div className="w-full lg:w-3/4 space-y-3">
                             <h1 className="text-[24px] font-bold playfair">{wishlistBook.bookName}</h1>
                             <p className="text-[16px] font-medium">By: {wishlistBook.author}</p>
-                            <div className="flex gap-5">
+                            <div className="flex flex-col lg:flex-row gap-5">
                                 <div className="space-x-5">
                                     <span className="font-bold text-black">Tag</span>
                                     <span className="text-[#23BE0A] bg-gray-100 px-4 py-1 rounded-[30px]">#{wishlistBook.tags[0]}</span>
@@ -140,7 +140,7 @@ const ListedBooks = () => {
                                 </div>
                             </div>
                             <hr className="border-dashed"/>
-                            <div className="flex gap-6">
+                            <div className="flex gap-2 lg:gap-6">
                                 <span className="px-5 py-2 bg-blue-100 rounded-[30px] text-[#328EFF]">Category: {wishlistBook.category}</span>
                                 <span className="px-5 py-2 bg-orange-100 rounded-[30px] text-[#FFAC33]">Rating: {wishlistBook.rating}</span>
                                 <Link to={`/bookDetails/${wishlistBook.bookId}`}><button className="px-5 py-2 bg-green-500 rounded-[30px] text-white">View Details</button></Link>
