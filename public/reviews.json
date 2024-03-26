@@ -1,0 +1,44 @@
+[
+    {
+        "bookId": 1,
+        "bookName": "The Silent Patient",
+        "userName": "John Doe",
+        "userReview": "Absolutely captivating! Couldn't put it down until the very end. The twists and turns kept me guessing the whole time. Highly recommend!",
+        "rating": 5
+    },
+    {
+        "bookId": 2,
+        "bookName": "Educated",
+        "userName": "Jane Smith",
+        "userReview": "Tara Westover's story is truly inspiring. Her journey to overcome obstacles and pursue education against all odds is both heartbreaking and uplifting. A must-read!",
+        "rating": 4.5
+    },
+    {
+        "bookId": 3,
+        "bookName": "The Great Gatsby",
+        "userName": "Alice Johnson",
+        "userReview": "Fitzgerald's prose is simply mesmerizing. The characters are vividly portrayed, and the themes are as relevant today as they were in the 1920s. A classic that never gets old.",
+        "rating": 4.8
+    },
+    {
+        "bookId": 4,
+        "bookName": "To Kill a Mockingbird",
+        "userName": "David Brown",
+        "userReview": "Harper Lee's masterpiece is a timeless classic that tackles important issues such as racism and morality with grace and compassion. A powerful and thought-provoking read.",
+        "rating": 4.7
+    },
+    {
+        "bookId": 5,
+        "bookName": "The Hunger Games",
+        "userName": "Emily Wilson",
+        "userReview": "Suzanne Collins has crafted a gripping dystopian world that sucks you in from the very first page. The action-packed plot and strong characters make this a must-read for fans of the genre.",
+        "rating": 4.5
+    },
+    {
+        "bookId": 6,
+        "bookName": "Harry Potter",
+        "userName": "Michael Johnson",
+        "userReview": "J.K. Rowling's wizarding world is pure magic! The characters are lovable, the plot is full of twists and turns, and the underlying themes of friendship and courage resonate with readers of all ages.",
+        "rating": 5
+    }
+]
