@@ -70,7 +70,7 @@ const ListedBooks = () => {
                         </ul>
                 </details>
             </div>
-            
+
             <Tabs onSelect={(index) => setActive(index)}>
                 <TabList>
                     <Tab>Read Books</Tab>
@@ -79,7 +79,7 @@ const ListedBooks = () => {
 
                 <TabPanel>
                     {
-                        readBookDisplay.map(readBook=><div key={readBook.bookId} className="flex flex-col lg:flex-row work-sans gap-5 lg:gap-10 mt-10">
+                        readBookDisplay.map(readBook=><div key={readBook.bookId} className="flex flex-col lg:flex-row work-sans gap-5 lg:gap-10 mt-10 border p-5 rounded-2xl">
                         <div className="bg-gray-100 rounded-2xl flex justify-center p-8 w-full lg:w-3/12">
                             <img className="h-[170px]" src={readBook.image} alt="" />
                         </div>
@@ -123,7 +123,7 @@ const ListedBooks = () => {
 
                 <TabPanel>
                 {
-                        wishlistBookDisplay.map(wishlistBook=><div key={wishlistBook.bookId} className="flex flex-col lg:flex-row work-sans gap-10 mt-10">
+                        wishlistBookDisplay.map(wishlistBook=><div key={wishlistBook.bookId} className="flex flex-col lg:flex-row work-sans gap-10 mt-10 border p-5 rounded-2xl">
                         <div className="bg-gray-100 rounded-2xl flex justify-center p-8 w-full lg:w-3/12">
                             <img className="h-[170px]" src={wishlistBook.image} alt="" />
                         </div>

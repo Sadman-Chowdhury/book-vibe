@@ -3,7 +3,7 @@ import '../Font/font.css'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useState } from "react";
-import { saveReadBooks, saveWishlistBooks } from "../../Utilities/localStorage";
+import { getReadBooks, getWishlistBooks, saveReadBooks, saveWishlistBooks } from "../../Utilities/localStorage";
 
 const BookDetails = () => {
     const books = useLoaderData()
@@ -14,11 +14,22 @@ const BookDetails = () => {
     const [isRead, setIsRead] = useState(false)
     const [isWishlist, setIsWishlist] = useState(false)
 
+    useState(()=>{
+        const readId = getReadBooks()
+        const wishId = getWishlistBooks()
+        if(readId.includes(idInt)){
+            setIsRead(true)
+        }
+        if(wishId.includes(idInt)){
+            setIsWishlist(true)
+        }
+     },[])
+
     const handleRead = () => {
         if(!isRead){
             setIsRead(true)
-            saveReadBooks(idInt)
             toast.success('Successfully added to Read!');
+            saveReadBooks(idInt)
         }else{
             toast.error('Already added to Read!');
         }
@@ -38,6 +49,7 @@ const BookDetails = () => {
 
     return (
         <div className="flex flex-col lg:flex-row work-sans gap-10 mt-6">
+            <ToastContainer />
                 <div className="bg-gray-100 rounded-2xl flex justify-center p-8 w-full lg:w-1/2">
                     <img className="h-[560px]" src={book.image} alt="" />
                 </div>
@@ -72,7 +84,6 @@ const BookDetails = () => {
                     </div>
                     <button onClick={handleRead} className="border px-7 py-4 rounded-lg font-semibold mr-7">Read</button>
                     <button onClick={handleWishlist} className="border px-7 py-4 rounded-lg font-semibold bg-[#50B1C9] text-white">Wishlist</button>
-                    <ToastContainer />
                 </div>
             </div>
     );
