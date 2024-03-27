@@ -53,7 +53,7 @@ const ListedBooks = () => {
                 <h1 className="text-3xl font-bold work-sans p-7">Books</h1>
             </div>
             <div className="flex justify-center">
-                <details className="dropdown" style={{ display: active === 0 ? 'block' : 'none' }}>
+                <details className="dropdown mt-5" style={{ display: active === 0 ? 'block' : 'none' }}>
                     <summary className="m-1 btn bg-[#23BE0A] text-white text-[20px]">Sort By <RiArrowDropDownLine className="text-5xl"/></summary>
                         <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
                             <li onClick={()=>handleBookFilter('Rating',readBooks)}><a>Rating</a></li>
@@ -61,7 +61,7 @@ const ListedBooks = () => {
                             <li onClick={()=>handleBookFilter('Published year', readBooks)}><a>Published year</a></li>
                         </ul>
                 </details>
-                <details className="dropdown" style={{ display: active === 1 ? 'block' : 'none' }}>
+                <details className="dropdown mt-5" style={{ display: active === 1 ? 'block' : 'none' }}>
                     <summary className="m-1 btn bg-[#23BE0A] text-white text-[20px]">Sort By <RiArrowDropDownLine className="text-5xl"/></summary>
                         <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
                             <li onClick={()=>handleBookFilter('Rating',wishlistBooks)}><a>Rating</a></li>
@@ -70,6 +70,7 @@ const ListedBooks = () => {
                         </ul>
                 </details>
             </div>
+            
             <Tabs onSelect={(index) => setActive(index)}>
                 <TabList>
                     <Tab>Read Books</Tab>
