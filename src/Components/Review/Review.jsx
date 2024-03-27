@@ -1,4 +1,3 @@
-
 const Review = ({review}) => {
     const {bookId, bookName, userName, userReview, rating} = review
 
@@ -14,7 +13,7 @@ const Review = ({review}) => {
                                 <span className="px-5 py-2 bg-orange-100 rounded-[30px] text-[#FFAC33]">Rating: {rating}</span>
                             </div>
                         </div>
-                    </div>
+            </div>
         </div>
     );
 };

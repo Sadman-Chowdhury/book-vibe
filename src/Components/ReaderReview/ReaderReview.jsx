@@ -16,7 +16,7 @@ const ReaderReview = () => {
             <div className="bg-gray-100 rounded-2xl text-center">
                 <h1 className="text-3xl font-bold work-sans p-7 mb-7">Reader's Review</h1>
             </div>
-            <div className="grid grid-cols-2 gap-5">
+            <div className="grid lg:grid-cols-2 gap-5">
                 {
                     reviews.map(review=><Review key={review.id} review={review}></Review>)
                 }

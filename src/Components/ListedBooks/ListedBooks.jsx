@@ -6,6 +6,8 @@ import { IoMdContacts } from "react-icons/io";
 import { HiOutlineDocumentChartBar } from "react-icons/hi2";
 import { Link } from "react-router-dom";
 import { RiArrowDropDownLine } from "react-icons/ri";
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import 'react-tabs/style/react-tabs.css';
 
 const ListedBooks = () => {
     const books = useLoaderData()
@@ -14,8 +16,9 @@ const ListedBooks = () => {
     const [wishlistBooks, setWishlistBooks] = useState([])
     const [readBookDisplay, setReadBookDisplay] = useState([]);
     const [wishlistBookDisplay, setWishlistBookDisplay] = useState([]);
+    const [active, setActive] = useState(0)
 
-    const handleBookFilter = (filter, bookType) => {
+    const handleBookFilter = (filter, bookType=['readBook']) => {
         let sortedBooks;
         if (filter === 'Rating') {
             sortedBooks = [...bookType].sort((a, b) => b.rating - a.rating);
@@ -49,8 +52,8 @@ const ListedBooks = () => {
             <div className="bg-gray-100 rounded-2xl text-center">
                 <h1 className="text-3xl font-bold work-sans p-7">Books</h1>
             </div>
-            <div className="text-center">
-                <details className="dropdown">
+            <div className="flex justify-center">
+                <details className="dropdown" style={{ display: active === 0 ? 'block' : 'none' }}>
                     <summary className="m-1 btn bg-[#23BE0A] text-white text-[20px]">Sort By <RiArrowDropDownLine className="text-5xl"/></summary>
                         <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
                             <li onClick={()=>handleBookFilter('Rating',readBooks)}><a>Rating</a></li>
@@ -58,10 +61,22 @@ const ListedBooks = () => {
                             <li onClick={()=>handleBookFilter('Published year', readBooks)}><a>Published year</a></li>
                         </ul>
                 </details>
+                <details className="dropdown" style={{ display: active === 1 ? 'block' : 'none' }}>
+                    <summary className="m-1 btn bg-[#23BE0A] text-white text-[20px]">Sort By <RiArrowDropDownLine className="text-5xl"/></summary>
+                        <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
+                            <li onClick={()=>handleBookFilter('Rating',wishlistBooks)}><a>Rating</a></li>
+                            <li onClick={()=>handleBookFilter('Number of pages', wishlistBooks)}><a>Number of pages</a></li>
+                            <li onClick={()=>handleBookFilter('Published year', wishlistBooks)}><a>Published year</a></li>
+                        </ul>
+                </details>
             </div>
-            <div role="tablist" className="tabs tabs-lifted">
-                <input type="radio" name="my_tabs_2" role="tab" className="tab text-xl work-sans" aria-label="Read Books" checked/>
-                <div role="tabpanel" className="tab-content bg-base-100 border-base-300 rounded-box p-6">
+            <Tabs onSelect={(index) => setActive(index)}>
+                <TabList>
+                    <Tab>Read Books</Tab>
+                    <Tab>Wishlist Books</Tab>
+                </TabList>
+
+                <TabPanel>
                     {
                         readBookDisplay.map(readBook=><div key={readBook.bookId} className="flex flex-col lg:flex-row work-sans gap-5 lg:gap-10 mt-10">
                         <div className="bg-gray-100 rounded-2xl flex justify-center p-8 w-full lg:w-3/12">
@@ -103,10 +118,9 @@ const ListedBooks = () => {
                         </div>
                     </div>)
                     }
-                </div>
+                </TabPanel>
 
-                <input type="radio" name="my_tabs_2" role="tab" className="tab text-xl work-sans" aria-label="Wishlist Books" />
-                <div role="tabpanel" className="tab-content bg-base-100 border-base-300 rounded-box p-6">
+                <TabPanel>
                 {
                         wishlistBookDisplay.map(wishlistBook=><div key={wishlistBook.bookId} className="flex flex-col lg:flex-row work-sans gap-10 mt-10">
                         <div className="bg-gray-100 rounded-2xl flex justify-center p-8 w-full lg:w-3/12">
@@ -148,9 +162,9 @@ const ListedBooks = () => {
                         </div>
                     </div>)
                     }
-                </div>
+                </TabPanel>
+                </Tabs>
             </div>
-        </div>
     );
 };
 
